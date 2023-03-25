@@ -6,7 +6,7 @@ export const DevContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(null);
   const [dataUser, setDataUser] = useState(null);
 
-  console.log(proccess.env.endereco)
+  console.log(process.env.endereco)
 
   const getUserByUsername = async (username) => {
     setIsLoading(true);
