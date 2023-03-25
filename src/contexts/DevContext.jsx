@@ -5,15 +5,14 @@ export const DevContext = createContext({});
 export const DevContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(null);
   const [dataUser, setDataUser] = useState(null);
-
-  console.log(process.env)
+  const token = process.env.REACT_APP_API_KEY
 
   const getUserByUsername = async (username) => {
     setIsLoading(true);
     axios
       .get(`https://api.github.com/users/${username}`, {
         headers: {
-          Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
+          Authorization: `Token ${token}`,
         },
       })
       .then((response) => {
