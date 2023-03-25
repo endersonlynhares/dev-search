@@ -1,13 +1,13 @@
 import { createContext, useMemo, useState } from "react";
 import axios from "axios";
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 export const DevContext = createContext({});
 
 export const DevContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(null);
-  // const token = "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";
   const token = process.env.REACT_APP_API_KEY;
   const [dataUser, setDataUser] = useState(null);
 
