@@ -5,6 +5,7 @@ export const light = {
     "base-card": "#FFFFFF",
     "base-info": "#F0F0F0",
     "base-text": "#696969",
+    "header-text": "#26578C",
     "base-text-title": "#000000",
     "base-text-info": "#89ADB9",
     "primary-500": "#0079FE",

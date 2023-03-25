@@ -1,18 +1,24 @@
-import { DevContainer, Infor, InforCommunity, InforSocial } from "./styles";
-import { useContext, useEffect, useState } from "react";
+import { DevContainer, Infor, InforCommunity, InforSocial, Loading } from "./styles";
+import { useContext} from "react";
 import { DevContext } from "../../contexts/DevContext";
-import UserImage from "../../assets/user-image.svg";
+import SpinnerDark from "../../assets/light_spinner.svg";
+import SpinnerLight from "../../assets/dark_spinner.svg";
+import { useTheme } from "styled-components";
 import { Buildings, Link, MapPin, TwitterLogo } from "phosphor-react";
-import useFetch from "../../hooks/useFetch";
-import LoadingGif from "../../assets/loading.gif";
+
 export const DevInfo = () => {
-  const { isLoading } = useContext(DevContext);
-  const { dataUser: data } = useContext(DevContext);
+  const { dataUser: data, isLoading } = useContext(DevContext);
+
+  const {title} = useTheme();
 
   return (
     <DevContainer>
-      {isLoading && <img width={22} src={LoadingGif} alt="Loading..." />}
-      {data && (
+      {isLoading && (
+        <Loading>
+          <img src={title == "dark" ? SpinnerDark : SpinnerLight} alt="loading" />
+        </Loading>
+      )}
+      {!isLoading && data && (
         <>
           <div>
             <img src={data.avatar_url} alt="" />

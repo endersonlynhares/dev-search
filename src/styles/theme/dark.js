@@ -5,6 +5,7 @@ export const dark = {
     "base-card": "#1F2A48",
     "base-info": "#141C2F",
     "base-text": "#B0AEAE",
+    "header-text": "#FFFFFF",
     "base-text-title": "#FFFFFF",
     "base-text-info": "#FFFFFF",
     "primary-500": "#0079FE",

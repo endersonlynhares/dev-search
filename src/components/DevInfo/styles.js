@@ -6,7 +6,9 @@ export const DevContainer = styled.div`
   padding: 3.2rem;
   border-radius: 15px;
   background-color: ${(props) => props.theme.colors["base-card"]};
+  box-shadow: 2px 7px 18px rgba(0, 0, 0, 0.12);
   gap: 3.8rem;
+  margin-top: 3rem;
 
  div{
   @media(max-width: 700px){
@@ -23,6 +25,13 @@ export const DevContainer = styled.div`
     flex-direction: column;
   }
 `;
+
+export const Loading = styled.span`
+  display: flex;
+  width: 100%;
+  align-items:center;
+  justify-content: center;
+`
 
 export const Infor = styled.div`
   width: 100%;

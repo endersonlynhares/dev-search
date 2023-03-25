@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SearchContainer = styled.form`
   background-color: ${props => props.theme.colors['base-card']};
+  box-shadow: 2px 7px 18px rgba(0, 0, 0, 0.12);
   width: 100%;
   display: flex;
   align-items: center;

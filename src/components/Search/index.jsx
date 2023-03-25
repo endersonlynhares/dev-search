@@ -5,25 +5,15 @@ import { DevContext } from "../../contexts/DevContext";
 import { useContext, useEffect } from "react";
 
 export const Search = () => {
-  const { updateDataUser,dataUser, getUserByUsername, setIsLoading } = useContext(DevContext);
+  const { getUserByUsername, setIsLoading } = useContext(DevContext);
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      username: "octokit",
+      username: "",
     },
   });
 
-  const onSubmit = async (data) => {
-    setIsLoading(true)
+  const onSubmit = (data) => {
     getUserByUsername(data.username)
-      .then((response) => {
-        updateDataUser(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
   };
 
   return (

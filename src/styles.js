@@ -14,7 +14,32 @@ export const AppContainer = styled.div`
     width: 100%;
     justify-content: center;
     flex-direction: column;
-    gap: 5.5rem;
+    gap: 2rem;
+
+    header{
+      color: ${props => props.theme.colors['header-text']};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1{
+        font-size: 3rem;
+      }
+
+      button{
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+        gap: 1.5rem;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover{
+          filter: brightness(50%);
+        }
+
+      }
+      
+    }
   }
 
 `
